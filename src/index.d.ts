@@ -11,19 +11,19 @@ export interface Options {
   /**
    * Options passed directly to [`normalize-url`](https://github.com/sindresorhus/normalize-url#options).
    *
-   * Requires options.normalize = true.
+   * Requires `options.normalize = true`.
    *
    * @default { stripWWW: false, stripHash: true, removeQueryParameters: true, removeTrailingSlash: false }
    */
   readonly normalizeOptions?: NormalizeOptions;
 
   /**
-   * Make an educated guess using other clues if canonical isn't explicitly set in the page's <head>.
+   * Make an educated guess using other clues if canonical isn't explicitly set in the page's `<head>`.
    *
    * @default false
    */
   readonly guess?: boolean;
-};
+}
 
 /**
  * Returns the current page's canonical URL.
