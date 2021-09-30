@@ -1,6 +1,6 @@
 {
   "name": "get-canonical-url",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "🔗 Determines the current page's canonical URL and optionally normalizes it for consistency.",
   "license": "MIT",
   "homepage": "https://github.com/jakejarvis/get-canonical-url",
