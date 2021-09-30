@@ -41,6 +41,13 @@ export default [
     ],
     plugins: [
       del({ targets: "dist/*" }),
+      eslint(),
+      resolve(),
+      babel({
+        babelHelpers: "bundled",
+        presets: [["@babel/preset-env"]],
+        exclude: ["node_modules/**"],
+      }),
       copy({
         // clearly this isn't really typescript, so we need to manually copy the type definition file
         targets: [
@@ -50,13 +57,6 @@ export default [
             rename: pkg.types.replace("./dist/", ""),
           },
         ],
-      }),
-      resolve(),
-      eslint(),
-      babel({
-        babelHelpers: "bundled",
-        presets: [["@babel/preset-env"]],
-        exclude: ["node_modules/**"],
       }),
       filesize(),
     ],
@@ -80,8 +80,8 @@ export default [
         banner: banner,
       },
     ],
+    external: ["normalize-url"],
     plugins: [
-      resolve(),
       babel({
         babelHelpers: "bundled",
         exclude: ["node_modules/**"],
