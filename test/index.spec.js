@@ -1,4 +1,4 @@
-/* eslint-env mocha */
+/* eslint-env node, mocha */
 import path from "path";
 import { fileURLToPath } from "url";
 import { JSDOM } from "jsdom";

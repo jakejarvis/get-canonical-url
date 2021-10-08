@@ -1,6 +1,6 @@
 import normalizeUrl from "normalize-url";
 
-export default function canonicalUrl(options) {
+export default function canonicalUrl(options = {}) {
   options = {
     normalize: false,
     normalizeOptions: {
