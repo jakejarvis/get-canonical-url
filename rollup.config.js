@@ -1,15 +1,17 @@
 import pkg from "./package.json";
 import resolve from "@rollup/plugin-node-resolve";
+import externals from "rollup-plugin-node-externals";
 import { babel } from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
-import eslint from "@rollup/plugin-eslint";
 import filesize from "rollup-plugin-filesize";
 import copy from "rollup-plugin-copy";
 import del from "rollup-plugin-delete";
+import commonjs from "@rollup/plugin-commonjs";
+import eslint from "@rollup/plugin-eslint";
 
 const exportName = "canonicalUrl";
 const input = "src/index.js";
-const banner = `/*! ${pkg.name} v${pkg.version} | ${pkg.license} | ${pkg.homepage} */`;
+const banner = `/*! ${pkg.name} v${pkg.version} | ${pkg.license} License | ${pkg.homepage} */`;
 
 export default [
   {
@@ -43,6 +45,7 @@ export default [
       del({ targets: "dist/*" }),
       eslint(),
       resolve(),
+      commonjs(),
       babel({
         babelHelpers: "bundled",
         presets: [["@babel/preset-env"]],
@@ -82,6 +85,8 @@ export default [
     ],
     external: ["normalize-url"],
     plugins: [
+      externals({ deps: true }),
+      commonjs(),
       babel({
         babelHelpers: "bundled",
         exclude: ["node_modules/**"],
