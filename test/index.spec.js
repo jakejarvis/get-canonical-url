@@ -68,6 +68,7 @@ describe("without canonical tag", () => {
 });
 
 async function wait(ms) {
+  // eslint-disable-next-line compat/compat
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
