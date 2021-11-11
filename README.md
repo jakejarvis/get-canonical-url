@@ -1,8 +1,7 @@
 # 🔗 get-canonical-url
 
 [![CI](https://github.com/jakejarvis/get-canonical-url/actions/workflows/ci.yml/badge.svg)](https://github.com/jakejarvis/get-canonical-url/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/get-canonical-url?logo=npm)](https://www.npmjs.com/package/get-canonical-url)
-[![MIT License](https://img.shields.io/github/license/jakejarvis/get-canonical-url?color=violet)](LICENSE)
+[![npm](https://img.shields.io/npm/v/get-canonical-url)](https://www.npmjs.com/package/get-canonical-url)
 
 Determines the current page's canonical URL and optionally normalizes it via [normalize-url](https://github.com/sindresorhus/normalize-url) for consistency.
 
@@ -12,6 +11,12 @@ Determines the current page's canonical URL and optionally normalizes it via [no
 npm install get-canonical-url
 # or...
 yarn add get-canonical-url
+```
+
+Or pull directly from [unpkg](https://unpkg.com/browse/get-canonical-url/) in-browser:
+
+```html
+<script src="https://unpkg.com/get-canonical-url/dist/get-canonical-url.min.js"></script>
 ```
 
 ## Usage
